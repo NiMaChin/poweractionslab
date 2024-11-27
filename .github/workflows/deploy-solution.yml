@@ -19,7 +19,7 @@ jobs:
           name: packed-solution 
         - uses: microsoft/powerplatform-actions/import-solution@v0 
         with: 
-          environment-url: https://orgf65c2582.crm6.dynamics.com 
+          environment-url: 'https://orgf65c2582.crm6.dynamics.com' 
           user-name: ${{ secrets.USERNAME }} 
           password-secret: ${{ secrets.PASSWORD }} 
           solution-file: GithubActionsPipeline‎.zip 
