@@ -10,14 +10,13 @@ on:
 jobs: 
   deploy: 
     runs-on: windows-latest 
-    if: ${{ github.event.workflow_run.conclusion == 'success' }} 
     environment: production 
     steps: 
       - uses: dawidd6/action-download-artifact@v2 
         with: 
           workflow: pack-solution.yml 
           name: packed-solution 
-        - uses: microsoft/powerplatform-actions/import-solution@v0 
+      - uses: microsoft/powerplatform-actions/import-solution@v0 
         with: 
           environment-url: 'https://orgf65c2582.crm6.dynamics.com' 
           user-name: ${{ secrets.USERNAME }} 
