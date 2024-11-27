@@ -1,8 +1,8 @@
-name: Deploy Contoso_University_Core 
+name: Deploy NickDemoProd
 
 on: 
   workflow_run: 
-    workflows: ["Pack Contoso_University_Core"] 
+    workflows: ["Pack NickDemoProd"] 
     branches: [main] 
     types: 
       - completed 
@@ -22,4 +22,4 @@ jobs:
           environment-url: https://orgf65c2582.crm6.dynamics.com 
           user-name: ${{ secrets.USERNAME }} 
           password-secret: ${{ secrets.PASSWORD }} 
-          solution-file: contoso_university_core_managed.zip 
+          solution-file: GithubActionsPipeline‎.zip 
