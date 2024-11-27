@@ -6,7 +6,11 @@ on:
     branches: [main] 
     types: 
       - completed 
-  workflow_dispatch: 
+  workflow_dispatch: env:
+#edit your values here
+  ENVIRONMENT_URL: 'https://orgf65c2582.crm6.dynamics.com' 
+  CLIENT_ID: 'c58a2ae4-ee2f-4dde-977a-9c1023743637'
+  TENANT_ID: 'd1ee9b37-cae3-4945-a777-7b8b03047391'
 jobs: 
   deploy: 
     runs-on: windows-latest 
@@ -18,7 +22,8 @@ jobs:
           name: packed-solution 
       - uses: microsoft/powerplatform-actions/import-solution@v0 
         with: 
-          environment-url: 'https://orgf65c2582.crm6.dynamics.com' 
-          user-name: ${{ secrets.USERNAME }} 
-          password-secret: ${{ secrets.PASSWORD }} 
+          environment-url:  ${{env.ENVIRONMENT_URL}}
+          app-id: ${{env.CLIENT_ID}}
+          client-secret: ${{ secrets.PASSWORD }} 
+          tenant-id: ${{env.TENANT_ID}}
           solution-file: GithubActionsPipeline‎.zip 
