@@ -6,7 +6,8 @@ on:
     branches: [main] 
     types: 
       - completed 
-  workflow_dispatch: env:
+  workflow_dispatch: 
+env:
 #edit your values here
   ENVIRONMENT_URL: 'https://orgf65c2582.crm6.dynamics.com' 
   CLIENT_ID: 'c58a2ae4-ee2f-4dde-977a-9c1023743637'
